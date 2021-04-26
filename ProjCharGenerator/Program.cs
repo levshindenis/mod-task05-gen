@@ -202,13 +202,19 @@ namespace generator
             }
 
             string[] words = File.ReadAllLines("Words.txt");
+            
             string[] twowords = File.ReadAllLines("TwoWords.txt");
 
             Bigram bigram = new Bigram(probability);
+            
             string output1 = bigram.getOutput(1000);
+           
             WordFrequency wordFrequency = new WordFrequency(words);
+           
             string output2 = wordFrequency.getOutput(1000);
+           
             FrequencyOfTwoWords frequencyOfTwoWords = new FrequencyOfTwoWords(twowords);
+            
             string output3 = frequencyOfTwoWords.getOutput(1000);
 
             File.WriteAllText("bigram.txt", output1);
